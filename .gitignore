@@ -1,0 +1,13 @@
+# Build related
+bin
+build
+*.o
+*.out
+
+# MacOS
+.DS_Store
+
+# IDEs
+.idea
+
+# MISC
