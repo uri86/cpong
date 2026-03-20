@@ -15,9 +15,12 @@ Player *createPlayer(KeyboardKey up, KeyboardKey down, int height, int width, in
 
 void movePlayer(Player *p, int speed)
 {
+    int dy = 0;
     if (IsKeyDown(p->up))
-        movePaddle(p->paddle, 0, -speed);
-    if (IsKeyDown(p->down))
-        movePaddle(p->paddle, 0, speed);
+        dy = -speed;
+    else if (IsKeyDown(p->down))
+        dy = speed;
+
+    movePaddle(p->paddle, 0, dy);
     drawPaddle(p->paddle, WHITE);
 }
